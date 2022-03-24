@@ -1,3 +1,5 @@
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/
+# https://twine.readthedocs.io/en/stable/
 import os
 
 from setuptools import setup
@@ -6,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, "README.md")).read()
 
 setup(
-    name="django-admin-confirm",
+    name="django-admin-confirm-cn",
     version="0.2.4",
     packages=["admin_confirm"],
     description=("Adds confirmation to Django Admin changes, additions and actions"),
