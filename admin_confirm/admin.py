@@ -457,7 +457,7 @@ def confirm_action(func):
         has_perm = modeladmin.get_actions(request).get(func.__name__) is not None
 
         action_display_name = snake_to_title_case(func.__name__)
-        title = f"Confirm Action: {action_display_name}"
+        title = "你确定吗？"
 
         context = {
             **modeladmin.admin_site.each_context(request),
