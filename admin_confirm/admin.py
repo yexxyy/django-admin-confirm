@@ -5,6 +5,7 @@ from django.core.cache import cache
 from django.core.exceptions import PermissionDenied
 from django.template.response import TemplateResponse
 from django.contrib.admin.options import TO_FIELD_VAR
+from django.utils.decorators import method_decorator
 from django.utils.translation import gettext as _
 from django.contrib.admin import helpers
 from django.db.models import Model, ManyToManyField, FileField, ImageField
@@ -102,7 +103,7 @@ class AdminConfirmMixin:
             context,
         )
 
-    @cache_control(private=True)
+    @method_decorator(cache_control(private=True))
     def changeform_view(self, request, object_id=None, form_url="", extra_context=None):
         if request.method == "POST":
             if (not object_id and CONFIRM_ADD in request.POST) or (
